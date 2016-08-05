@@ -1,0 +1,8 @@
+.vs
+.vscode
+packages
+app/node_modules
+app/out
+AntWall/bin
+AntWall/obj
+*.userprefs
