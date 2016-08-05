@@ -27,7 +27,7 @@ const argv = require('yargs')
                 describe: "Run as debug window",
                 type: "boolean"
             })
-            .argv;
+            .parse(process.argv);
 
 const mon = argv.monitor;
 const url = argv.url;
