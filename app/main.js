@@ -35,20 +35,21 @@ const debug = argv.debug;
 const icon = process.platform === 'win32' ? "./icon.ico" : "./icon.png";
 
 if(debug){
-    require('electron-debug')({showDevTools: debug});
+    require('electron-debug')({enabled: true, showDevTools: true});
 }
 
 console.log("opening", url, "on monitor", mon, debug ? "in debug mode" : "");
 
-let mainWindow, tray, settingWindow;
+let mainWindow;
 
 function makeid()
 {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-    for( var i=0; i < 5; i++ )
+    for(var i = 0; i < 5; i++){
         text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
 
     return text;
 }
@@ -93,11 +94,6 @@ app.on('ready', function(){
     }
 
     mainWindow.loadURL(url);
-
-    mainWindow.on('closed', function () {
-        mainWindow = null
-        app.quit();
-    })
 });
 
 app.on('window-all-closed', function () {
