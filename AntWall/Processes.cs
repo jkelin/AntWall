@@ -67,6 +67,7 @@ namespace AntWall
                         return pr;
                     }
                     catch (Win32Exception) { }
+                    catch (InvalidOperationException) { }
                     catch (Exception e)
                     {
                         Console.WriteLine(e);

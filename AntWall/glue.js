@@ -1,6 +1,6 @@
 ﻿(function () {
     function get(path){
-        fetch("http://localhost:39583/api/" + path).then(function (response) {
+        return fetch("http://localhost:39583/api/" + path).then(function (response) {
             return response.json();
         });
     };
