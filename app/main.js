@@ -34,6 +34,10 @@ const url = argv.url;
 const debug = argv.debug;
 const icon = process.platform === 'win32' ? "./icon.ico" : "./icon.png";
 
+if(debug){
+    require('electron-debug')({showDevTools: debug});
+}
+
 console.log("opening", url, "on monitor", mon, debug ? "in debug mode" : "");
 
 let mainWindow, tray, settingWindow;
@@ -92,9 +96,10 @@ app.on('ready', function(){
 
     mainWindow.on('closed', function () {
         mainWindow = null
+        app.quit();
     })
 });
 
 app.on('window-all-closed', function () {
-    app.quit()
+    app.quit();
 });

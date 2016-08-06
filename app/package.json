@@ -1,6 +1,6 @@
 {
   "name": "antwall",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "main.js",
   "productName": "AntWall",
@@ -15,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "electron-debug": "^1.0.1",
     "yargs": "^4.8.1"
   }
 }
