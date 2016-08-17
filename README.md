@@ -1,9 +1,13 @@
 # AntWall
-+ AntWall - HTML5 live wallpaper. Uses electron. You can use file:// url. You can use Node.js modules and you can use require("") in your wallpapers.
-+ AntWallServer - .NET server that displays info about current environment. Also acts as hack to make AntWall window into a wallpaper (thanks to https://github.com/Foohy/Wallpainter).
++ AntWall - HTML5 live wallpaper, supports transparency and displays behind icons. Uses electron. Can be run with file:// url. Can utilize Node.js modules and can use require("") in wallpapers. Flash is not supported but HTML5 video works.
++ AntWallServer - Mono/.NET server that displays info about current environment. Also acts as hack to make AntWall window into a wallpaper (thanks to https://github.com/Foohy/Wallpainter).
+
+Example wallpaper: https://github.com/fireantik/AntWallSample
+
+Downloads: https://github.com/fireantik/AntWall/releases/
 
 ## Usage
-1. Start AntWallServer.exe (.NET executable).
+1. Start AntWallServer.exe (Mono/.NET executable).
 2. Start AntWall for each monitor (with proper -m id) that you want it to display on.
 
 ## AntWall command line arguments
@@ -22,7 +26,16 @@
 
 ## Current project state
 + AntWallServer cpu info is mostly broken.
-+ AntWallServer works only on .NET but it should be easy to port it to mono with minor modifications.
++ AntWallServer works only on Windows, it will need minor tweaks for other platforms (different counter names).
 + Only tested on Windows
 
-Downloads: https://github.com/fireantik/AntWall/releases/
+## Developer info
++ To build the project you need node, npm and mono xbuild in your path.
+
+## Building and packaging
+Delete app/out and then:
+```
+cd app
+npm run pkg
+```
+
