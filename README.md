@@ -20,4 +20,9 @@
 --help      Display help screen.
 ```
 
+## Current project state
++ AntWallServer cpu info is mostly broken.
++ AntWallServer works only on .NET but it should be easy to port it to mono with minor modifications.
++ Only tested on Windows
+
 Downloads: https://github.com/fireantik/AntWall/releases/
